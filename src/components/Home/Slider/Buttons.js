@@ -3,7 +3,7 @@ import { styled } from '@mui/system';
 import { Typography } from '@mui/material';
 import BtnLeft from './BtnLeft.svg';
 import BtnRight from './BtnRight.svg';
-import theme from '../../Theme';
+import theme from '../../../Theme';
 
 
 const Root = styled('div')({

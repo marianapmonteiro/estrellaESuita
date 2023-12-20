@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { styled } from '@mui/system';
 import { Typography, Button } from '@mui/material';
-import theme from '../../Theme';
-import Img1 from '../../data/slideImagem1.jpg';
-import Img2 from '../../data/slideImagem2.jpg';
-import Img3 from '../../data/slideImagem3.jpg';
-import Img4 from '../../data/slideImagem4.jpg';
+import theme from '../../../Theme';
+import Img1 from '../../../data/slideImagem1.jpg';
+import Img2 from '../../../data/slideImagem2.jpg';
+import Img3 from '../../../data/slideImagem3.jpg';
+import Img4 from '../../../data/slideImagem4.jpg';
 import Buttons from './Buttons';
 
 
@@ -105,6 +105,7 @@ const Slider = () => {
                     </Button>
                 </BoxContent>
             </Box>
+            {/* //estao causando em mobile o overflow x, alterar */}
             <CarouselBtns>
                 <Buttons count={active} setCount={setActive} />
             </CarouselBtns>

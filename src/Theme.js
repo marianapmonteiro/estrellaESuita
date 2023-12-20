@@ -11,6 +11,7 @@ const theme = createTheme({
     },
     typography: {
         fontFamily: 'Inter, sans-serif',
+        // fontFamily: 'Lora, serif'
     },
     breakpoints: {
         values: {
