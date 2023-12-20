@@ -46,7 +46,7 @@ const TextContainer = styled('div')({
     },
 
     [theme.breakpoints.up('xl')]: {
-        width: "60%",
+        width: "70%",
     },
 });
 
