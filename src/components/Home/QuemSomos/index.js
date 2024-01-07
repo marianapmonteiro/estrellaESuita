@@ -1,8 +1,8 @@
 import React from 'react';
 import { styled } from '@mui/system';
+import { Button, Grid } from '@mui/material';
 import theme from '../../../Theme';
 import Logo from "../../../data/Logo2.png"
-import { Button, Grid } from '@mui/material';
 
 
 const Root = styled('div')({
@@ -45,9 +45,9 @@ const TextContainer = styled('div')({
         width: "90%",
     },
 
-    [theme.breakpoints.up('xl')]: {
-        width: "70%",
-    },
+    // [theme.breakpoints.up('xl')]: {
+    //     width: "65%",
+    // },
 });
 
 const Title = styled('h2')({

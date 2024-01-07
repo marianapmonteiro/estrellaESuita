@@ -16,7 +16,9 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="App">
         <Navbar />
-        <RouterProvider router={router} />
+        <div className="page-wrap">
+          <RouterProvider router={router} />
+        </div>
         <Footer />
       </div>
     </ThemeProvider>
