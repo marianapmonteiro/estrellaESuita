@@ -3,6 +3,7 @@ import Slider from "../components/Home/Slider";
 import QuemSomos from "../components/Home/QuemSomos";
 import Servicos from "../components/Home/Servicos";
 import Depoimentos from "../components/Home/Depoimentos";
+import Contato from "../components/Home/Contato";
 
 const Home = () => {
 	return (
@@ -19,6 +20,9 @@ const Home = () => {
 			</section>
 			<section>
 				<Depoimentos />
+			</section>
+			<section>
+				<Contato />
 			</section>
 		</>
 	);

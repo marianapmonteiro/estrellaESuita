@@ -1,8 +1,8 @@
 import React from "react";
 import { styled } from "@mui/system";
-import { Typography, Divider } from "@mui/material";
+import { Divider } from "@mui/material";
 import theme from "../../../Theme";
-import TitleLine from "./TitleLine.svg";
+import Title from "../../Global/GlobalStyles";
 
 const Root = styled("div")({
 	width: "100%",
@@ -25,14 +25,6 @@ const Container = styled("div")({
 	// },
 });
 
-const Title = styled("h2")({
-	fontSize: "44.2px",
-	fontStyle: "normal",
-	fontWeight: 800,
-	margin: 0,
-	marginTop: "49px",
-});
-
 const DividerStyled = styled(Divider)({
 	width: "10%",
 	height: "7px",
@@ -51,9 +43,7 @@ const index = () => {
 					Depoimentos de nossos{" "}
 					<span
 						style={{
-							borderBottom: "7px solid #D4B99E",
-							borderBottomLeftRadius: "10px",
-							borderBottomRightRadius: "10px",
+							borderBottom: `7px solid ${theme.palette.primary.main} `,
 						}}
 					>
 						clientes

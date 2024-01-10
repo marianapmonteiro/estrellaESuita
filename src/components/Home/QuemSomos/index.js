@@ -32,9 +32,32 @@ const FirstGrid = styled(Grid)({
 	},
 });
 
-const TextContainer = styled("div")({
-	width: "606px",
+const SecondGrid = styled(Grid)({
+	[theme.breakpoints.between("md", "lg")]: {
+		display: "flex",
+		justifyContent: "center",
+		alignItems: "center",
+	},
+});
+
+const StyledImg = styled("img")({
+	width: "auto",
+	height: "auto",
+
+	[theme.breakpoints.between("md", "lg")]: {
+		width: "250px",
+		height: "250px",
+	},
+
 	[theme.breakpoints.down("md")]: {
+		width: "150px",
+		height: "150px",
+	},
+});
+
+const TextContainer = styled("div")({
+	width: "auto",
+	[theme.breakpoints.down("sm")]: {
 		width: "100%",
 		display: "flex",
 		flexDirection: "column",
@@ -42,7 +65,6 @@ const TextContainer = styled("div")({
 	[theme.breakpoints.between("md", "lg")]: {
 		width: "90%",
 	},
-
 	// [theme.breakpoints.up('xl')]: {
 	//     width: "65%",
 	// },
@@ -68,7 +90,7 @@ const Paragraph = styled("p")({
 	fontSize: "33.16px",
 	fontWeight: 300,
 	[theme.breakpoints.between("md", "lg")]: {
-		fontSize: "14px",
+		fontSize: "16px",
 	},
 	[theme.breakpoints.down("md")]: {
 		fontSize: "14px",
@@ -84,9 +106,15 @@ const StyledBtn = styled(Button)({
 	textTransform: "none",
 	width: "148px",
 	height: "53px",
-	// [theme.breakpoints.down('md')]: {
-	//     width: "100%"
-	// },
+	[theme.breakpoints.between("md", "lg")]: {
+		fontSize: "14px",
+	},
+	[theme.breakpoints.down("sm")]: {
+		width: "148px",
+		height: "auto",
+		fontSize: "12px",
+		marginTop: "10%",
+	},
 });
 const QuemSomos = () => {
 	return (
@@ -94,16 +122,16 @@ const QuemSomos = () => {
 			<Grid
 				container
 				gap="4em"
-				style={{
+				sx={{
 					display: "flex",
 					justifyContent: "center",
 					alignItems: "center",
 				}}
 			>
 				<FirstGrid item xs={12} md={4}>
-					<img src={Logo} alt="Logo" />
+					<StyledImg src={Logo} alt="Logo" />
 				</FirstGrid>
-				<Grid item xs={12} md={6}>
+				<SecondGrid item xs={12} md={6}>
 					<TextContainer>
 						<Title>Quem é ESTRELLA & SUITA?</Title>
 						<Paragraph>
@@ -116,7 +144,7 @@ const QuemSomos = () => {
 						</Paragraph>
 						<StyledBtn variant="contained">Saiba Mais</StyledBtn>
 					</TextContainer>
-				</Grid>
+				</SecondGrid>
 			</Grid>
 		</Root>
 	);

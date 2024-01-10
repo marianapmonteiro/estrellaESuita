@@ -31,37 +31,27 @@ const Container = styled("div")({
 	justifyContent: "flex-start",
 	alignItems: "center",
 	gap: "32px",
+	backgroundColor: theme.palette.secondary.main,
 });
 
 const Categories = styled("div")({
-	width: "80%",
+	width: "100%",
+	paddingInline: "20%",
 	height: "auto",
 	display: "flex",
-	flexWrap: "wrap",
 	gap: "5em",
 	[theme.breakpoints.down("sm")]: {
 		gap: "1em",
-	},
-});
-
-const TopBorder = styled(Divider)({
-	width: "100%",
-	border: `1px solid ${theme.palette.primary.main}`,
-	position: "absolute",
-	bottom: "55px",
-	zIndex: 100,
-	[theme.breakpoints.down("sm")]: {
-		bottom: "175px",
+		flexWrap: "wrap",
 	},
 });
 
 const Bottom = styled("div")({
-	width: "80%",
+	width: "100%",
 	display: "flex",
 	flexDirection: "column",
-	// borderTop: `1px solid ${theme.palette.primary.main}`,
-	position: "absolute",
-	bottom: "17px",
+	paddingBottom: "17px",
+	borderTop: `1px solid ${theme.palette.primary.main}`,
 	[theme.breakpoints.down("sm")]: {
 		position: "relative",
 	},
@@ -73,6 +63,7 @@ const BottomContainer = styled("div")({
 	justifyContent: "space-between",
 	alignItems: "flex-start",
 	marginTop: "14.5px",
+	paddingInline: "20%",
 	[theme.breakpoints.down("sm")]: {
 		flexDirection: "column",
 		flexWrap: "wrap",
@@ -155,7 +146,6 @@ const index = () => {
 					<List title="Serviços" list={ServicosLi} />
 					<List title="Como funcionamos" list={FuncionamentoLi} />
 				</Categories>
-				<TopBorder />
 				<Bottom>
 					<BottomContainer>
 						<BottomItem>

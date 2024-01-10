@@ -80,6 +80,9 @@ const CarouselBtns = styled(Typography)({
 	paddingBottom: "30px",
 	left: "50%",
 	transform: "translateX(-50%)",
+	[theme.breakpoints.down("sm")]: {
+		display: "none",
+	},
 });
 
 const Imagens = ["", Img1, Img2, Img3, Img4, Img3];

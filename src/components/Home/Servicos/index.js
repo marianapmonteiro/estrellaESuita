@@ -4,6 +4,7 @@ import { Divider, Typography } from "@mui/material";
 import theme from "../../../Theme";
 import Imagem from "../../../data/cardImg.jpg";
 import CardItem from "./Card";
+import Title from "../../Global/GlobalStyles";
 
 const Root = styled("div")({
 	width: "100%",
@@ -29,13 +30,9 @@ const TitleContainer = styled("div")({
 	flexDirection: "column",
 	alignItems: "center",
 	marginTop: "48px",
-});
-
-const Title = styled("h2")({
-	fontSize: "44.2px",
-	fontStyle: "normal",
-	fontWeight: 800,
-	margin: 0,
+	[theme.breakpoints.down("sm")]: {
+		alignItems: "flex-start",
+	},
 });
 
 const DividerStyled = styled(Divider)({
