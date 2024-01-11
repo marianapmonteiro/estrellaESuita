@@ -14,6 +14,10 @@ const Root = styled("div")({
 	[theme.breakpoints.between("md", "lg")]: {
 		height: "100vh",
 	},
+	[theme.breakpoints.up("lg")]: {
+		height: "90vh",
+		padding: "0",
+	},
 	[theme.breakpoints.down("md")]: {
 		boxSizing: "border-box",
 		width: "100%",
@@ -28,6 +32,9 @@ const FirstGrid = styled(Grid)({
 	alignItems: "center",
 
 	[theme.breakpoints.down("md")]: {
+		justifyContent: "center",
+	},
+	[theme.breakpoints.up("lg")]: {
 		justifyContent: "center",
 	},
 });

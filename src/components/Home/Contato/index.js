@@ -65,6 +65,8 @@ const FormDiv = styled("div")({
 
 const FormTitle = styled(Typography)({
 	fontSize: "24.88px",
+	width: "fit-content",
+	height: "fit-content",
 	[theme.breakpoints.down("sm")]: {
 		fontSize: "16px",
 	},
