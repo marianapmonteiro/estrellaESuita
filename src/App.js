@@ -1,6 +1,10 @@
 import React from "react";
 import { ThemeProvider } from "@mui/material/styles";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+	BrowserRouter,
+	createBrowserRouter,
+	RouterProvider,
+} from "react-router-dom";
 import theme from "./Theme";
 import router from "./Routes";
 import Navbar from "./components/Navbar";

@@ -55,6 +55,7 @@ const FormDiv = styled("div")({
 	alignItems: "center",
 	justifyContent: "flex-start",
 	gap: "10px",
+	// backgroundColor: "pink",
 	[theme.breakpoints.down("sm")]: {
 		flexDirection: "column",
 		alignItems: "flex-start",
@@ -65,8 +66,6 @@ const FormDiv = styled("div")({
 
 const FormTitle = styled(Typography)({
 	fontSize: "24.88px",
-	width: "fit-content",
-	height: "fit-content",
 	[theme.breakpoints.down("sm")]: {
 		fontSize: "16px",
 	},
@@ -109,34 +108,20 @@ const Index = () => {
 					>
 						Entre em contato conosco
 					</Title>
-					<hr
-						style={{
-							background: "lime",
-							color: "lime",
-							borderColor: "lime",
-							height: "3px",
-						}}
-					/>
 				</TitleContainer>
 				<FormContainer>
 					{campos.map((item) => {
 						return (
 							<FormDiv>
 								<FormTitle>{item}</FormTitle>
-								<TextField
-									id="outlined-basic"
-									label=""
-									variant="outlined"
-									fullWidth
-									sx={{
-										"& .MuiInputBase-root": {
-											border: "1px solid black",
-										},
-										"& .MuiOutlinedInput-root": {
-											"&.Mui-focused fieldset": {
-												border: "1px solid black",
-											},
-										},
+								<input
+									type={item === "Seu melhor e-mail:" ? "email" : "text"}
+									style={{
+										borderRadius: "10px",
+										border: "1px solid #000",
+										height: "58px",
+										width: "100%",
+										paddingLeft: "10px",
 									}}
 								/>
 							</FormDiv>
@@ -144,22 +129,15 @@ const Index = () => {
 					})}
 					<FormDiv style={{ alignItems: "flex-start" }}>
 						<FormTitle>Mensagem:</FormTitle>
-						<TextField
-							id="outlined-basic"
-							label=""
-							variant="outlined"
-							fullWidth
-							multiline
-							rows={8}
-							sx={{
-								"& .MuiInputBase-root": {
-									border: "1px solid black",
-								},
-								"& .MuiOutlinedInput-root": {
-									"&.Mui-focused fieldset": {
-										border: "1px solid black",
-									},
-								},
+						<textarea
+							type="text"
+							style={{
+								minHeight: "357px",
+								borderRadius: "10px",
+								border: "1px solid #000",
+								width: "100%",
+								paddingLeft: "10px",
+								paddingTop: "10px",
 							}}
 						/>
 					</FormDiv>
@@ -169,6 +147,7 @@ const Index = () => {
 								sx={{
 									fontSize: "24.88px",
 									fontWeight: 700,
+
 									[theme.breakpoints.down("sm")]: {
 										fontSize: "16px",
 									},
