@@ -3,11 +3,10 @@ import { styled } from "@mui/system";
 import { Typography } from "@mui/material";
 import Logo from "../../data/Logo.png";
 import theme from "../../Theme";
-import { useNavigate } from "react-router-dom";
 
-const Root = styled("div")({
+const Root = styled("div")(({ isHomePage }) => ({
 	width: "100%",
-	position: "absolute",
+	position: isHomePage ? "absolute" : "static",
 	zIndex: 1000,
 	boxSizing: "border-box",
 	paddingLeft: "5%",
@@ -16,7 +15,7 @@ const Root = styled("div")({
 	filter: "blur(0px)",
 	height: "97px",
 	flexShrink: 0,
-});
+}));
 
 const Container = styled("div")({
 	width: "100%",
@@ -30,7 +29,7 @@ const Container = styled("div")({
 const Menu = styled("div")({
 	display: "flex",
 	gap: "50px",
-	[theme.breakpoints.down("md")]: {
+	[theme.breakpoints.down("ipadMini")]: {
 		display: "none",
 	},
 });
@@ -62,11 +61,21 @@ const toPage = ({ index }) => {
 	}
 };
 const Navbar = () => {
+	const isHomePage = window.location.pathname === "/";
+
+	console.log("isHomePage>", isHomePage);
 	return (
-		<Root>
+		<Root isHomePage={isHomePage}>
 			<Container>
 				<div style={{ marginBottom: "10px" }}>
-					<img src={Logo} alt="Logo" />
+					<img
+						src={Logo}
+						alt="Logo"
+						onClick={() => {
+							window.location.href = "/";
+						}}
+						style={{ cursor: "pointer" }}
+					/>
 				</div>
 				<Menu>
 					{categorias.map((item, index) => {

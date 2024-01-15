@@ -49,6 +49,14 @@ const Box = styled("div")({
 		paddingBottom: "20px",
 		paddingRight: "20px",
 	},
+	[theme.breakpoints.between("md", "ipadMini")]: {
+		width: "50%",
+		height: "fit-content",
+		top: "40%",
+		paddingTop: "20px",
+		paddingBottom: "20px",
+		paddingRight: "20px",
+	},
 });
 const BoxContent = styled("div")({
 	width: "70%",
