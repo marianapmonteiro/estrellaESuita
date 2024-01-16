@@ -3,6 +3,7 @@ import { styled } from "@mui/system";
 import { Typography } from "@mui/material";
 import Logo from "../../data/Logo.png";
 import theme from "../../Theme";
+import MenuIcon from "@mui/icons-material/Menu";
 
 const Root = styled("div")(({ isHomePage }) => ({
 	width: "100%",
@@ -34,6 +35,14 @@ const Menu = styled("div")({
 	},
 });
 
+const MenuMobile = styled("div")({
+	display: "none",
+	color: "white",
+	[theme.breakpoints.down("ipadMini")]: {
+		display: "flex",
+	},
+});
+
 const Btn = styled(Typography)({
 	color: "#FFF",
 	fontSize: "18.66px",
@@ -53,10 +62,8 @@ const toPage = ({ index }) => {
 	} else if (index === 1) {
 		window.location.href = "/servicos";
 	} else if (index === 2) {
-		window.location.href = "/advogados";
-	} else if (index === 3) {
 		window.location.href = "/sobrenos";
-	} else if (index === 4) {
+	} else if (index === 3) {
 		window.location.href = "/contato";
 	}
 };
@@ -82,6 +89,9 @@ const Navbar = () => {
 						return <Btn onClick={() => toPage({ index })}>{item}</Btn>;
 					})}
 				</Menu>
+				<MenuMobile>
+					<MenuIcon style={{ cursor: "pointer" }} />
+				</MenuMobile>
 			</Container>
 		</Root>
 	);

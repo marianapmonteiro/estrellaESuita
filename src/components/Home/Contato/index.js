@@ -1,7 +1,7 @@
-import React, { useRef, useEffect, useState } from "react";
+import React from "react";
 import { styled } from "@mui/system";
 import theme from "../../../Theme";
-import { Divider, Typography, TextField, Button } from "@mui/material";
+import { Typography, Button } from "@mui/material";
 import Title from "../../Global/GlobalStyles";
 
 const Root = styled("div")({
@@ -18,14 +18,6 @@ const Container = styled("div")({
 	justifyContent: "center",
 	alignItems: "center",
 	flexDirection: "column",
-});
-
-const DividerStyled = styled("div")({
-	width: "80%", // Ajuste a largura conforme necessário
-	height: "4px", // Ajuste a altura conforme necessário
-	borderRadius: "20px",
-	background: "#D4B99E",
-	marginTop: "10px", // Ajuste a margem conforme necessário
 });
 
 const TitleContainer = styled("div")({
