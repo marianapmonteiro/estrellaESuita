@@ -15,7 +15,7 @@ const Root = styled("div")({
 });
 
 const Buttons = ({ count, setCount }) => {
-	const [maxImg, setMaxImg] = useState(5);
+	const [maxImg, setMaxImg] = useState(4);
 
 	const prevImg = () => {
 		if (count > 1) {
@@ -26,8 +26,11 @@ const Buttons = ({ count, setCount }) => {
 	const nextImg = () => {
 		if (count < maxImg) {
 			setCount(count + 1);
+		} else {
+			setCount(0)
 		}
 	};
+
 	return (
 		<Root>
 			<img
@@ -40,7 +43,7 @@ const Buttons = ({ count, setCount }) => {
 			<Typography
 				style={{ fontSize: "18.66px", fontWeight: "800", color: "white" }}
 			>
-				<span style={{ color: theme.palette.primary.main }}>{`0${count}`}</span>
+				<span style={{ color: theme.palette.primary.main }}>{`0${count + 1}`}</span>
 				/05
 			</Typography>
 			<img

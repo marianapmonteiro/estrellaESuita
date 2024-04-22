@@ -1,9 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 import { styled } from "@mui/system";
 import { Typography } from "@mui/material";
 import Logo from "../../data/Logo.png";
 import theme from "../../Theme";
 import MenuIcon from "@mui/icons-material/Menu";
+import DrawerMobile from "./Drawer"
 
 const Root = styled("div")(({ isHomePage }) => ({
 	width: "100%",
@@ -45,7 +46,7 @@ const MenuMobile = styled("div")({
 
 const Btn = styled(Typography)({
 	color: "#FFF",
-	fontSize: "18.66px",
+	fontSize: "16px",
 	fontWeight: 700,
 	cursor: "pointer",
 	borderBottom: `2px solid transparent`,
@@ -70,7 +71,9 @@ const toPage = ({ index }) => {
 const Navbar = () => {
 	const isHomePage = window.location.pathname === "/";
 
-	console.log("isHomePage>", isHomePage);
+	const [open, setOpen] = useState(false)
+
+	
 	return (
 		<Root isHomePage={isHomePage}>
 			<Container>
@@ -90,9 +93,10 @@ const Navbar = () => {
 					})}
 				</Menu>
 				<MenuMobile>
-					<MenuIcon style={{ cursor: "pointer" }} />
+					<MenuIcon style={{ cursor: "pointer" }} onClick={() => setOpen(!open)}/>
 				</MenuMobile>
 			</Container>
+		 <DrawerMobile open={open} setOpen={setOpen} /> 
 		</Root>
 	);
 };

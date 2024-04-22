@@ -36,28 +36,34 @@ const FormContainer = styled("div")({
 	flexDirection: "column",
 	alignItems: "center",
 	justifyContent: "center",
-	marginTop: "48px",
+	marginTop: "5em",
 	gap: "38px",
 });
 
-const FormDiv = styled("div")({
-	width: "100%",
-	height: "100%",
-	display: "flex",
-	alignItems: "center",
-	justifyContent: "flex-start",
-	gap: "10px",
-	// backgroundColor: "pink",
-	[theme.breakpoints.down("sm")]: {
-		flexDirection: "column",
-		alignItems: "flex-start",
-	},
-
-	// marginTop: "55px",
+const FormTitleWrapper = styled("div")({
+  display: "flex",
+  justifyContent: "flex-end",
+  alignItems: "flex-end",
+  width: "fit-content",
 });
 
+const FormDiv = styled("div")({
+  width: "100%",
+  height: "100%",
+  display: "flex",
+  flexDirection: "column",
+  gap: "10px",
+  maxWidth: "778px",
+  // backgroundColor: "pink",
+  [theme.breakpoints.down("sm")]: {
+    flexDirection: "column",
+    alignItems: "flex-start",
+  },
+});
+
+
 const FormTitle = styled(Typography)({
-	fontSize: "24.88px",
+	 fontSize: "22px",
 	[theme.breakpoints.down("sm")]: {
 		fontSize: "16px",
 	},
@@ -83,6 +89,7 @@ const ButtonDiv = styled("div")({
 	display: "flex",
 	width: "100%",
 	justifyContent: "flex-end",
+	maxWidth: "778px",
 });
 
 const campos = ["Nome:", "Seu melhor e-mail:", "Tópico:"];
@@ -102,23 +109,26 @@ const Index = () => {
 					</Title>
 				</TitleContainer>
 				<FormContainer>
-					{campos.map((item) => {
-						return (
-							<FormDiv>
+					  {campos.map((item, index) => {
+							return (
+							<FormDiv key={index}>
+								<FormTitleWrapper>
 								<FormTitle>{item}</FormTitle>
+								</FormTitleWrapper>
 								<input
-									type={item === "Seu melhor e-mail:" ? "email" : "text"}
-									style={{
-										borderRadius: "10px",
-										border: "1px solid #000",
-										height: "58px",
-										width: "100%",
-										paddingLeft: "10px",
-									}}
+								type={item === "Seu melhor e-mail:" ? "email" : "text"}
+								style={{
+									borderRadius: "10px",
+									border: "1px solid #000",
+									height: "58px",
+									width: "100%",
+									paddingLeft: "10px",
+									fontSize:"20px"
+								}}
 								/>
 							</FormDiv>
-						);
-					})}
+							);
+          				})}
 					<FormDiv style={{ alignItems: "flex-start" }}>
 						<FormTitle>Mensagem:</FormTitle>
 						<textarea
@@ -130,6 +140,7 @@ const Index = () => {
 								width: "100%",
 								paddingLeft: "10px",
 								paddingTop: "10px",
+								fontSize:"20px"
 							}}
 						/>
 					</FormDiv>

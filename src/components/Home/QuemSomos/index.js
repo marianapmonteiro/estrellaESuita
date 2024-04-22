@@ -94,7 +94,7 @@ const Title = styled("h2")({
 const Paragraph = styled("p")({
 	marginTop: "10%",
 	color: "white",
-	fontSize: "33.16px",
+	fontSize: "24px",
 	fontWeight: 300,
 	[theme.breakpoints.between("md", "lg")]: {
 		fontSize: "16px",
@@ -105,7 +105,7 @@ const Paragraph = styled("p")({
 });
 
 const StyledBtn = styled(Button)({
-	marginTop: "3%",
+	marginTop: "3em",
 	backgroundColor: theme.palette.primary.main,
 	fontWeight: "bold",
 	color: "#000",

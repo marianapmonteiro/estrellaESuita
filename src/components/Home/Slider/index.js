@@ -14,14 +14,19 @@ const Root = styled("div")({
 	flexShrink: 0,
 	boxSizing: "border-box",
 	position: "relative",
+	overflow: "hidden",
 });
 
-const BgImg = styled("div")({
+const BgImg = styled("div")(({ active }) => ({
 	width: "100%",
-	height: "100vh",
+	height: "100%",
 	transition: "background-image linear 0.5s",
 	filter: "grayscale(100%)",
-});
+	backgroundImage: `url(${active})`,
+	backgroundRepeat: "no-repeat",
+	backgroundPosition: "center",
+	backgroundSize: "cover",
+}));
 
 const Box = styled("div")({
 	top: "42%",
@@ -93,18 +98,21 @@ const CarouselBtns = styled(Typography)({
 	},
 });
 
-const Imagens = ["", Img1, Img2, Img3, Img4, Img3];
+const Imagens = [Img1, Img2, Img3, Img4, Img3];
 
-const Slider = () => {
-	const [active, setActive] = useState(1);
+const Slider = ({nextSectionRef}) => {
+	const [active, setActive] = useState(0);
+
+  const scrollToNextSection = () => {
+    if (nextSectionRef.current) {
+      nextSectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
 
 	return (
 		<Root>
-			<BgImg
-				style={{
-					background: `url(${Imagens[active]}) lightgray 0.633px -12.612px / 101.75% 121.137% no-repeat`,
-				}}
-			></BgImg>
+			<BgImg active={Imagens[active]}></BgImg>
 			<Box>
 				<BoxContent>
 					<Text>
@@ -128,6 +136,7 @@ const Slider = () => {
 						</span>
 					</Text>
 					<Button
+					   onClick={scrollToNextSection}
 						variant="contained"
 						sx={{
 							backgroundColor: theme.palette.primary.main,
